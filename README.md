@@ -116,4 +116,6 @@ void main(void){
    }
 }
 ```
+## Flowchart
+![Image](traffic-floq.png)
 
