@@ -119,3 +119,6 @@ void main(void){
 ## Flowchart
 ![Image](traffic-floq.png)
 
+## Conclusion
+This project was created with dual purpose of displaying the messages on the LCD as well as glowing the required LED for controlling the traffic. The LCD messages were created keeping in mind the colorblind drivers who may have a hard time recognising the traffic colors therein.
+
