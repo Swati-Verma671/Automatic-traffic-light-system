@@ -35,30 +35,30 @@ org 0000h;
 	acall command;
 	
 	command:acall busy;lcd command
-	clr p0.0;rs
-	setb p0.1;rw
-	wait:clr p0.2;en
+	clr p0.0;rs=0
+	setb p0.1;rw=1
+	mov p2,a;
+	setb p0.2;en=1
 	nop;
-	setb p0.2;en
-	jb p2.7,wait;
+	clr p0.2;en=0
 	ret;
 	
 	busy:setb p2.7;busy flag
-	clr p0.0;rs
-	setb p0.1;rw
-	wait1:clr p0.2;en
+	clr p0.0;rs=0
+	setb p0.1;rw=1
+	wait1:clr p0.2;en=0
 	nop;
-	setb p0.2;en
+	setb p0.2;en=1
 	jb p2.7,wait1;
 	ret;
 	
 	data1:acall busy;lcd data 
-	setb p0.0;rs
-	clr p0.1;rw
+	setb p0.0;rs=1
+	clr p0.1;rw=0
 	mov p2,A;
-	setb p0.2;en
+	setb p0.2;en=1
 	nop;
-	clr p0.2;en
+	clr p0.2;en=0
 	ret;
 	
 	display:mov dptr,#table;Stop message
